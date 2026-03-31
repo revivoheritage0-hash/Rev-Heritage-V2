@@ -109,7 +109,7 @@
 	}
 
 	body, input, select, textarea {
-		color: #777;
+		color: #3b3b3b;
 		font-family: "Source Sans Pro", sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
@@ -2250,7 +2250,7 @@
 /* Box */
 
 	.box {
-		background: #fff;
+		background: #ffffff00;
 		border-radius: 6px;
 		box-shadow: 0 2px 0 0 #e5e5e5;
 		margin: 0 0 2em 0;

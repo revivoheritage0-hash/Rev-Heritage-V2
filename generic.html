@@ -6,17 +6,164 @@
 -->
 <html>
 	<head>
-		<title>Generic - Alpha by HTML5 UP</title>
+		<title>Cine Suntem - Revivo Heritage</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			body::before {
+				content: "";
+				position: fixed;
+				inset: 0;
+				z-index: 0;
+				background-image: url("images/pic07.jpg");
+				background-size: cover;
+				background-position: center;
+				filter: brightness(1);
+			}
+			#page-wrapper { position: relative; z-index: 1; }
+ 
+			/* ── Fade-in + slide ── */
+			.rh-slide {
+				opacity: 0;
+				transform: translateY(36px);
+				transition: opacity 0.65s ease, transform 0.65s ease;
+			}
+			.rh-slide.visible { opacity: 1; transform: translateY(0); }
+ 
+			/* ── Value cards ── */
+			.values-section { padding: 3em 0; }
+			.values-inner   { max-width: 960px; margin: 0 auto; padding: 0 2em; }
+			.values-header  { text-align: center; margin-bottom: 2.5em; }
+			.section-label  {
+				font-size: 0.75em; font-weight: 600;
+				letter-spacing: 0.25em; text-transform: uppercase;
+				color: #aaa; margin-bottom: 0.5em;
+			}
+			.values-grid {
+				display: grid;
+				grid-template-columns: repeat(3,1fr);
+				gap: 1.5em;
+			}
+			@media (max-width: 768px) { .values-grid { grid-template-columns: repeat(2,1fr); } }
+			@media (max-width: 480px) { .values-grid { grid-template-columns: 1fr; } }
+ 
+			.value-card {
+				background: rgba(255,255,255,0.03);
+				border: 1px solid rgba(255,255,255,0.1);
+				padding: 2em 1.5em;
+				border-bottom: 3px solid transparent;
+				opacity: 0; transform: translateY(30px);
+				transition: opacity 0.6s ease, transform 0.6s ease,
+				            border-color 0.3s, box-shadow 0.3s;
+			}
+			.value-card.visible { opacity: 1; transform: translateY(0); }
+			.value-card:hover {
+				border-bottom-color: #5171ff;
+				transform: translateY(-5px);
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+			.value-num {
+				font-size: 2.5em; font-weight: 700;
+				color: #5171ff; line-height: 1;
+				margin-bottom: 0.3em;
+				opacity: 0.25; transition: opacity 0.3s ease;
+			}
+			.value-card.visible .value-num { opacity: 1; }
+			.value-title {
+				font-size: 0.85em; font-weight: 700;
+				letter-spacing: 0.1em; text-transform: uppercase;
+				margin-bottom: 0.7em;
+			}
+			.value-text { font-size: 0.88em; line-height: 1.75; opacity: 0.7; }
+ 
+			/* ── Stats bar ── */
+			.rh-stats {
+				display: grid;
+				grid-template-columns: repeat(4,1fr);
+				border: 1px solid rgba(255,255,255,0.1);
+				border-left: 4px solid #5171ff;
+				border-radius: 4px;
+				overflow: hidden;
+				margin: 2em 0;
+			}
+			@media (max-width: 700px) { .rh-stats { grid-template-columns: repeat(2,1fr); } }
+			.rh-stat {
+				text-align: center; padding: 2em 1em;
+				border-right: 1px solid rgba(255,255,255,0.07);
+				background: rgba(255,255,255,0.03);
+				transition: background 0.3s;
+			}
+			.rh-stat:last-child { border-right: none; }
+			.rh-stat:hover { background: rgba(247,148,29,0.06); }
+			.rh-stat-value {
+				font-size: 2.6em; font-weight: 900;
+				color: #5171ff; line-height: 1; display: block;
+			}
+			.rh-stat-label {
+				font-size: 0.7em; letter-spacing: 0.14em;
+				text-transform: uppercase; opacity: 0.55;
+				margin-top: 0.6em; display: block;
+			}
+ 
+			/* ── Services ── */
+			.rh-services-wrap { margin-top: 3em; }
+			.rh-services-header { text-align: center; margin-bottom: 2em; }
+			.rh-services-header h3 { font-size: 1.5em; margin-bottom: 0.3em; }
+			.rh-services-header p  { font-size: 0.9em; opacity: 0.6; }
+			.rh-services-grid {
+				display: grid;
+				grid-template-columns: repeat(3,1fr);
+				gap: 1.2em;
+			}
+			@media (max-width: 800px) { .rh-services-grid { grid-template-columns: repeat(2,1fr); } }
+			@media (max-width: 500px) { .rh-services-grid { grid-template-columns: 1fr; } }
+ 
+			.rh-service-card {
+				background: rgba(255,255,255,0.03);
+				border: 1px solid rgba(255,255,255,0.08);
+				border-top: 3px solid transparent;
+				border-radius: 4px;
+				padding: 2em 1.5em 1.7em;
+				opacity: 0; transform: translateY(28px);
+				transition: opacity 0.6s ease, transform 0.6s ease,
+				            border-top-color 0.3s, box-shadow 0.3s;
+			}
+			.rh-service-card.visible { opacity: 1; transform: translateY(0); }
+			.rh-service-card:hover {
+				border-top-color: #f7941d;
+				box-shadow: 0 8px 28px rgba(0,0,0,0.22);
+				transform: translateY(-4px);
+			}
+			.rh-service-icon {
+				width: 52px; height: 52px; border-radius: 50%;
+				background: rgba(247,148,29,0.10);
+				border: 2px solid rgba(247,148,29,0.28);
+				display: flex; align-items: center; justify-content: center;
+				margin-bottom: 1.2em;
+				transition: background 0.3s, border-color 0.3s;
+			}
+			.rh-service-card:hover .rh-service-icon {
+				background: rgba(247,148,29,0.22);
+				border-color: #f7941d;
+			}
+			.rh-service-icon .icon {
+				font-size: 1.25em; color: #f7941d; line-height: 52px;
+			}
+			.rh-service-title {
+				font-size: 0.82em; font-weight: 700;
+				letter-spacing: 0.1em; text-transform: uppercase;
+				margin-bottom: 0.6em;
+			}
+			.rh-service-desc { font-size: 0.85em; line-height: 1.75; opacity: 0.6; }
+		</style>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
-
+ 
 			<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
+					<h1><a href="index.html">Revivo</a> Heritage</h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
@@ -41,30 +188,92 @@
 						</ul>
 					</nav>
 				</header>
-
+			<div class="values-section">
+  <div class="values-inner">
+    <div class="values-header">
+      <div class="section-label">Valorile noastre</div>
+      <h2>Principiile care ne <em>ghidează</em></h2>
+    </div>
+ 
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <div class="value-title">Respect pentru patrimoniu</div>
+        <p class="value-text">Intervențiile noastre urmăresc conservarea caracterului autentic și a valorii istorice a fiecărui imobil.</p>
+      </div>
+ 
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <div class="value-title">Competență tehnică</div>
+        <p class="value-text">Lucrăm cu personal calificat și colaboratori — arhitecți, ingineri structurali, experți în restaurare — pentru o abordare integrată.</p>
+      </div>
+ 
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <div class="value-title">Calitate și conformitate</div>
+        <p class="value-text">Toate lucrările sunt executate în conformitate cu normele legale și avizele autorităților competente, cu control riguros al calității.</p>
+      </div>
+ 
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <div class="value-title">Responsabilitate</div>
+        <p class="value-text">Respectăm angajamentele contractuale, menținem transparența față de clienți și utilizăm eficient resursele puse la dispoziție.</p>
+      </div>
+ 
+      <div class="value-card">
+        <div class="value-num">05</div>
+        <div class="value-title">Siguranță și sustenabilitate</div>
+        <p class="value-text">Prioritizăm siguranța în muncă și promovăm soluții durabile, compatibile cu structura și materialele originale ale clădirii.</p>
+      </div>
+ 
+      <div class="value-card">
+        <div class="value-num">06</div>
+        <div class="value-title">Eficiență operațională</div>
+        <p class="value-text">Organizarea riguroasă a activității, managementul proiectelor și respectarea termenelor de execuție sunt pilonii strategiei noastre.</p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>Generic</h2>
-						<p>A generic page for every non-generic situation.</p>
+						<h2>Cine suntem</h2>
 					</header>
 					<div class="box">
-						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-						<h3>This is a subheading</h3>
-						<p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat. Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
-						<div class="row">
-							<div class="row-6 row-12-mobilep">
-								<h3>And now a subheading</h3>
-								<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-							</div>
-							<div class="row-6 row-12-mobilep">
-								<h3>And another subheading</h3>
-								<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-							</div>
-						</div>
+						<span class="image featured"><img src="images/pic06.jpg" alt="" /></span>
+						<h3>Despre Revivo Heritage</h3>
+						<p>Revivo Heritage este o companie specializată în restaurarea și conservarea clădirilor istorice, dedicată protejării patrimoniului arhitectural și cultural al României. Cu o abordare riguroasă și un profund respect față de valoarea istorică a fiecărui obiectiv, combinăm expertiza tehnică avansată, materialele de calitate superioară și metodologiile consacrate în domeniu pentru a reda frumusețea autentică și durabilitatea construcțiilor de epocă. Misiunea noastră este să asigurăm că moștenirea arhitecturală a generațiilor trecute rămâne vie și accesibilă generațiilor viitoare.
+							<br><br>
+							Activitatea noastră acoperă o gamă completă de servicii de restaurare și conservare, adaptate specificului fiecărui obiectiv în parte. Intervenim asupra monumentelor istorice, clădirilor de patrimoniu și imobilelor cu valoare arhitecturală deosebită, oferind soluții integrate care răspund atât cerințelor actuale de siguranță și funcționalitate, cât și standardelor internaționale de conservare. Fiecare proiect este tratat ca un angajament față de autenticitate, iar intervențiile noastre sunt concepute astfel încât să păstreze nealterată identitatea originală a construcției.
+							<br><br>
+							Serviciile Revivo Heritage includ evaluarea și diagnosticarea stării de conservare a structurilor istorice, consolidarea și stabilizarea elementelor arhitecturale deteriorate, restaurarea fațadelor, a elementelor decorative și a finisajelor originale, precum și reabilitarea sistemelor structurale în conformitate cu normele tehnice în vigoare. Oferim, de asemenea, servicii de consultanță specializată pentru proprietarii de imobile istorice, sprijinindu-i în obținerea avizelor necesare și în elaborarea documentațiilor tehnice solicitate de autoritățile competente.
+						</p>
+ 
 					</div>
-				</section>
-
+ 
+				<!-- Stats -->
+				<div class="rh-stats rh-slide">
+					<div class="rh-stat">
+						<span class="rh-stat-value">7+</span>
+						<span class="rh-stat-label">Specialiști în echipă</span>
+					</div>
+					<div class="rh-stat">
+						<span class="rh-stat-value">50+</span>
+						<span class="rh-stat-label">Proiecte finalizate</span>
+					</div>
+					<div class="rh-stat">
+						<span class="rh-stat-value">100%</span>
+						<span class="rh-stat-label">Angajament calitate</span>
+					</div>
+					<div class="rh-stat">
+						<span class="rh-stat-value">24/7</span>
+						<span class="rh-stat-label">Suport disponibil</span>
+					</div>
+				</div>
+ 
+				
+ 
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
@@ -79,9 +288,9 @@
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
-
+ 
 		</div>
-
+ 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -90,6 +299,56 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+ 
+		<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					if (!entry.isIntersecting) return;
+					var el = entry.target;
+ 
+					if (el.classList.contains('value-card')) {
+						var all = Array.from(document.querySelectorAll('.value-card'));
+						var i = all.indexOf(el);
+						setTimeout(function () {
+							el.classList.add('visible');
+							/* number counter */
+							var numEl = el.querySelector('.value-num');
+							if (numEl) {
+								var target = parseInt(numEl.textContent, 10);
+								if (!isNaN(target)) {
+									var dur = 600, t0 = null;
+									(function step(ts) {
+										if (!t0) t0 = ts;
+										var p = Math.min((ts - t0) / dur, 1);
+										var e = 1 - Math.pow(1 - p, 3);
+										var c = Math.floor(e * target);
+										numEl.textContent = c < 10 ? '0' + c : '' + c;
+										if (p < 1) requestAnimationFrame(step);
+										else numEl.textContent = target < 10 ? '0' + target : '' + target;
+									})(performance.now());
+								}
+							}
+						}, i * 110);
+ 
+					} else if (el.classList.contains('rh-service-card')) {
+						var all = Array.from(document.querySelectorAll('.rh-service-card'));
+						var i = all.indexOf(el);
+						setTimeout(function () { el.classList.add('visible'); }, i * 110);
+ 
+					} else {
+						el.classList.add('visible');
+					}
+ 
+					observer.unobserve(el);
+				});
+			}, { threshold: 0.12 });
+ 
+			document.querySelectorAll('.value-card, .rh-service-card, .rh-slide').forEach(function (el) {
+				observer.observe(el);
+			});
+		});
+		</script>
+ 
 	</body>
 </html>
