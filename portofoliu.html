@@ -1,12 +1,7 @@
 <!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Cine Suntem - Revivo Heritage</title>
+		<title>Proiecte - Revivo Heritage SRL</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,330 +11,525 @@
 				position: fixed;
 				inset: 0;
 				z-index: 0;
-				background-image: url("images/pic07.jpg");
+				background-image: url("images/pic13.jpg");
 				background-size: cover;
 				background-position: center;
 				filter: brightness(1);
 			}
-			#page-wrapper { position: relative; z-index: 1; }
+			#page-wrapper { position: relative; z-index: 1; }			
  
-			/* ── Fade-in + slide ── */
-			.rh-slide {
-				opacity: 0;
-				transform: translateY(36px);
-				transition: opacity 0.65s ease, transform 0.65s ease;
+			/* ═══════════════════════════════════════
+			   INTRO BANNER
+			═══════════════════════════════════════ */
+			.projects-intro {
+				text-align: center;
+				margin-bottom: 2.5rem;
 			}
-			.rh-slide.visible { opacity: 1; transform: translateY(0); }
+			.projects-intro p {
+				max-width: 620px;
+				margin: 0 auto;
+				font-size: 0.97rem;
+				line-height: 1.75;
+				color: #555;
+			}
  
-			/* ── Value cards ── */
-			.values-section { padding: 3em 0; }
-			.values-inner   { max-width: 960px; margin: 0 auto; padding: 0 2em; }
-			.values-header  { text-align: center; margin-bottom: 2.5em; }
-			.section-label  {
-				font-size: 0.75em; font-weight: 600;
-				letter-spacing: 0.25em; text-transform: uppercase;
-				color: #aaa; margin-bottom: 0.5em;
-			}
-			.values-grid {
-				display: grid;
-				grid-template-columns: repeat(3,1fr);
-				gap: 1.5em;
-			}
-			@media (max-width: 768px) { .values-grid { grid-template-columns: repeat(2,1fr); } }
-			@media (max-width: 480px) { .values-grid { grid-template-columns: 1fr; } }
- 
-			.value-card {
-				background: rgba(255,255,255,0.03);
-				border: 1px solid rgba(255,255,255,0.1);
-				padding: 2em 1.5em;
-				border-bottom: 3px solid transparent;
-				opacity: 0; transform: translateY(30px);
-				transition: opacity 0.6s ease, transform 0.6s ease,
-				            border-color 0.3s, box-shadow 0.3s;
-			}
-			.value-card.visible { opacity: 1; transform: translateY(0); }
-			.value-card:hover {
-				border-bottom-color: #5171ff;
-				transform: translateY(-5px);
-				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-			}
-			.value-num {
-				font-size: 2.5em; font-weight: 700;
-				color: #5171ff; line-height: 1;
-				margin-bottom: 0.3em;
-				opacity: 0.25; transition: opacity 0.3s ease;
-			}
-			.value-card.visible .value-num { opacity: 1; }
-			.value-title {
-				font-size: 0.85em; font-weight: 700;
-				letter-spacing: 0.1em; text-transform: uppercase;
-				margin-bottom: 0.7em;
-			}
-			.value-text { font-size: 0.88em; line-height: 1.75; opacity: 0.7; }
- 
-			/* ── Stats bar ── */
-			.rh-stats {
-				display: grid;
-				grid-template-columns: repeat(4,1fr);
-				border: 1px solid rgba(255,255,255,0.1);
-				border-left: 4px solid #5171ff;
-				border-radius: 4px;
+			/* ═══════════════════════════════════════
+			   FEATURED PROJECT — Before / After
+			═══════════════════════════════════════ */
+			.featured-project {
+				background: #fff;
+				border: 1px solid #ddd;
+				border-radius: 6px;
 				overflow: hidden;
-				margin: 2em 0;
+				margin-bottom: 2.5rem;
 			}
-			@media (max-width: 700px) { .rh-stats { grid-template-columns: repeat(2,1fr); } }
-			.rh-stat {
-				text-align: center; padding: 2em 1em;
-				border-right: 1px solid rgba(255,255,255,0.07);
-				background: rgba(255,255,255,0.03);
-				transition: background 0.3s;
+			.featured-project .fp-header {
+				background: #2c2c2c;
+				color: #fff;
+				padding: 1.4rem 2rem;
+				display: flex;
+				align-items: center;
+				gap: 1rem;
 			}
-			.rh-stat:last-child { border-right: none; }
-			.rh-stat:hover { background: rgba(247,148,29,0.06); }
-			.rh-stat-value {
-				font-size: 2.6em; font-weight: 900;
-				color: #5171ff; line-height: 1; display: block;
+			.featured-project .fp-header .badge {
+				background: #193fcb;
+				color: #fff;
+				font-size: 0.65rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.14em;
+				padding: 0.25rem 0.7rem;
+				border-radius: 3px;
+				white-space: nowrap;
 			}
-			.rh-stat-label {
-				font-size: 0.7em; letter-spacing: 0.14em;
-				text-transform: uppercase; opacity: 0.55;
-				margin-top: 0.6em; display: block;
+			.featured-project .fp-header h3 {
+				margin: 0;
+				font-size: 1.15rem;
+				font-weight: 600;
+				color: #fff;
+				border: none;
+				padding: 0;
+			}
+			.featured-project .fp-header .fp-location {
+				margin-left: auto;
+				font-size: 0.78rem;
+				color: #bbb;
+				white-space: nowrap;
 			}
  
-			/* ── Services ── */
-			.rh-services-wrap { margin-top: 3em; }
-			.rh-services-header { text-align: center; margin-bottom: 2em; }
-			.rh-services-header h3 { font-size: 1.5em; margin-bottom: 0.3em; }
-			.rh-services-header p  { font-size: 0.9em; opacity: 0.6; }
-			.rh-services-grid {
+			/* Before / After slider area */
+			.before-after-wrap {
 				display: grid;
-				grid-template-columns: repeat(3,1fr);
-				gap: 1.2em;
+				grid-template-columns: 1fr 1fr;
+				gap: 0;
 			}
-			@media (max-width: 800px) { .rh-services-grid { grid-template-columns: repeat(2,1fr); } }
-			@media (max-width: 500px) { .rh-services-grid { grid-template-columns: 1fr; } }
+			@media (max-width: 640px) {
+				.before-after-wrap { grid-template-columns: 1fr; }
+			}
+			.ba-panel {
+				position: relative;
+				overflow: hidden;
+			}
+			.ba-panel .ba-label {
+				position: absolute;
+				top: 14px;
+				left: 14px;
+				background: rgba(0,0,0,0.65);
+				color: #fff;
+				font-size: 0.7rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.14em;
+				padding: 0.3rem 0.75rem;
+				border-radius: 3px;
+				z-index: 2;
+			}
+			.ba-panel.after .ba-label {
+				background: rgba(20, 107, 194, 0.85);
+			}
+			.ba-panel .photo-slot {
+				width: 100%;
+				aspect-ratio: 4 / 3;
+				background: #e8e8e8;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				color: #aaa;
+				font-size: 0.82rem;
+				gap: 0.5rem;
+				border-right: 1px solid #ddd;
+			}
+			.ba-panel.after .photo-slot {
+				border-right: none;
+				border-left: 1px solid #ddd;
+				background: #efefef;
+			}
+			.ba-panel .photo-slot .slot-icon {
+				font-size: 2.2rem;
+				opacity: 0.35;
+			}
+			/* When user adds real images, replace .photo-slot with an <img> */
+			.ba-panel img {
+				width: 100%;
+				aspect-ratio: 4 / 3;
+				object-fit: cover;
+				display: block;
+			}
  
-			.rh-service-card {
-				background: rgba(255,255,255,0.03);
-				border: 1px solid rgba(255,255,255,0.08);
-				border-top: 3px solid transparent;
+			/* Project description */
+			.fp-body {
+				padding: 1.8rem 2rem;
+				border-top: 1px solid #eee;
+			}
+			.fp-body p {
+				margin: 0 0 1rem;
+				font-size: 0.95rem;
+				line-height: 1.7;
+				color: #444;
+			}
+			.fp-body p:last-child { margin-bottom: 0; }
+ 
+			.fp-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-top: 1.2rem;
+			}
+			.fp-tags span {
+				background: #f2f2f2;
+				border: 1px solid #ddd;
+				border-radius: 3px;
+				font-size: 0.73rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: #666;
+				padding: 0.25rem 0.65rem;
+			}
+ 
+			/* ═══════════════════════════════════════
+			   SERVICES GRID (tipuri de lucrări)
+			═══════════════════════════════════════ */
+			.section-title {
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				letter-spacing: 0.18em;
+				color: #999;
+				margin: 2.5rem 0 1.2rem;
+				padding-bottom: 0.6rem;
+				border-bottom: 1px solid #eee;
+			}
+ 
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.2rem;
+				margin-bottom: 2.5rem;
+			}
+			@media (max-width: 768px) {
+				.services-grid { grid-template-columns: 1fr 1fr; }
+			}
+			@media (max-width: 480px) {
+				.services-grid { grid-template-columns: 1fr; }
+			}
+			.service-card {
+				background: #f9f9f9;
+				border: 1px solid #e0e0e0;
+				border-radius: 6px;
+				padding: 1.4rem 1.2rem;
+			}
+			.service-card .sc-icon {
+				font-size: 1.6rem;
+				margin-bottom: 0.7rem;
+				display: block;
+			}
+			.service-card h4 {
+				margin: 0 0 0.5rem;
+				font-size: 0.9rem;
+				font-weight: 700;
+				color: #2c2c2c;
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
+			}
+			.service-card p {
+				margin: 0;
+				font-size: 0.83rem;
+				line-height: 1.6;
+				color: #666;
+			}
+ 
+			/* ═══════════════════════════════════════
+			   GALLERY PLACEHOLDERS (alte proiecte)
+			═══════════════════════════════════════ */
+			.gallery-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.2rem;
+				margin-bottom: 2.5rem;
+			}
+			@media (max-width: 768px) {
+				.gallery-grid { grid-template-columns: 1fr 1fr; }
+			}
+			@media (max-width: 480px) {
+				.gallery-grid { grid-template-columns: 1fr; }
+			}
+			.gallery-item {
+				border: 1px solid #ddd;
+				border-radius: 6px;
+				overflow: hidden;
+				background: #fff;
+			}
+			.gallery-item .gi-photo {
+				width: 100%;
+				aspect-ratio: 4 / 3;
+				background: #e8e8e8;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				color: #bbb;
+				font-size: 0.75rem;
+				gap: 0.4rem;
+			}
+			.gallery-item .gi-photo .gi-icon { font-size: 1.8rem; opacity: 0.3; }
+			.gallery-item img {
+				width: 100%;
+				aspect-ratio: 4 / 3;
+				object-fit: cover;
+				display: block;
+			}
+			.gallery-item .gi-info {
+				padding: 0.9rem 1rem;
+				border-top: 1px solid #eee;
+			}
+			.gallery-item .gi-info h4 {
+				margin: 0 0 0.25rem;
+				font-size: 0.85rem;
+				font-weight: 700;
+				color: #2c2c2c;
+			}
+			.gallery-item .gi-info p {
+				margin: 0;
+				font-size: 0.78rem;
+				color: #888;
+			}
+ 
+			/* ═══════════════════════════════════════
+			   CTA BANNER
+			═══════════════════════════════════════ */
+			.cta-box {
+				background: #2c2c2c;
+				color: #fff;
+				border-radius: 6px;
+				padding: 2rem 2.5rem;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1.5rem;
+				flex-wrap: wrap;
+			}
+			.cta-box h3 {
+				margin: 0 0 0.3rem;
+				font-size: 1.1rem;
+				color: #fff;
+				border: none;
+				padding: 0;
+			}
+			.cta-box p {
+				margin: 0;
+				font-size: 0.85rem;
+				color: #bbb;
+			}
+			.cta-box a.button-cta {
+				background: #193fcb;
+				color: #fff;
+				padding: 0.75rem 1.8rem;
 				border-radius: 4px;
-				padding: 2em 1.5em 1.7em;
-				opacity: 0; transform: translateY(28px);
-				transition: opacity 0.6s ease, transform 0.6s ease,
-				            border-top-color 0.3s, box-shadow 0.3s;
+				font-size: 0.82rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.12em;
+				text-decoration: none;
+				white-space: nowrap;
+				transition: background 0.2s;
+				flex-shrink: 0;
 			}
-			.rh-service-card.visible { opacity: 1; transform: translateY(0); }
-			.rh-service-card:hover {
-				border-top-color: #f7941d;
-				box-shadow: 0 8px 28px rgba(0,0,0,0.22);
-				transform: translateY(-4px);
+			.cta-box a.button-cta:hover { background: #a07608; }
+
+			/* ═══════════════════════════════════════
+			   SCROLL FADE-IN
+			═══════════════════════════════════════ */
+			.fade-in {
+				opacity: 0;
+				transform: translateY(28px);
+				transition: opacity 0.6s ease, transform 0.6s ease;
 			}
-			.rh-service-icon {
-				width: 52px; height: 52px; border-radius: 50%;
-				background: rgba(247,148,29,0.10);
-				border: 2px solid rgba(247,148,29,0.28);
-				display: flex; align-items: center; justify-content: center;
-				margin-bottom: 1.2em;
-				transition: background 0.3s, border-color 0.3s;
+			.fade-in.visible {
+				opacity: 1;
+				transform: translateY(0);
 			}
-			.rh-service-card:hover .rh-service-icon {
-				background: rgba(247,148,29,0.22);
-				border-color: #f7941d;
-			}
-			.rh-service-icon .icon {
-				font-size: 1.25em; color: #f7941d; line-height: 52px;
-			}
-			.rh-service-title {
-				font-size: 0.82em; font-weight: 700;
-				letter-spacing: 0.1em; text-transform: uppercase;
-				margin-bottom: 0.6em;
-			}
-			.rh-service-desc { font-size: 0.85em; line-height: 1.75; opacity: 0.6; }
+
 		</style>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
  
 			<!-- Header -->
-				<header id="header">
-					<h1><a href="index.html">Revivo</a> Heritage</h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#" class="icon solid fa-angle-down">Pagini</a>
-								<ul>
-									<li><a href="generic.html">Cine suntem</a></li>
-									<li><a href="contact.html">Portofoliu</a></li>
-									<li><a href="contact.html">Contact</a></li>
-
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</header>
-			<div class="values-section">
-  <div class="values-inner">
-    <div class="values-header">
-      <div class="section-label">Valorile noastre</div>
-      <h2>Principiile care ne <em>ghidează</em></h2>
-    </div>
- 
-    <div class="values-grid">
-      <div class="value-card">
-        <div class="value-num">01</div>
-        <div class="value-title">Respect pentru patrimoniu</div>
-        <p class="value-text">Intervențiile noastre urmăresc conservarea caracterului autentic și a valorii istorice a fiecărui imobil.</p>
-      </div>
- 
-      <div class="value-card">
-        <div class="value-num">02</div>
-        <div class="value-title">Competență tehnică</div>
-        <p class="value-text">Lucrăm cu personal calificat și colaboratori — arhitecți, ingineri structurali, experți în restaurare — pentru o abordare integrată.</p>
-      </div>
- 
-      <div class="value-card">
-        <div class="value-num">03</div>
-        <div class="value-title">Calitate și conformitate</div>
-        <p class="value-text">Toate lucrările sunt executate în conformitate cu normele legale și avizele autorităților competente, cu control riguros al calității.</p>
-      </div>
- 
-      <div class="value-card">
-        <div class="value-num">04</div>
-        <div class="value-title">Responsabilitate</div>
-        <p class="value-text">Respectăm angajamentele contractuale, menținem transparența față de clienți și utilizăm eficient resursele puse la dispoziție.</p>
-      </div>
- 
-      <div class="value-card">
-        <div class="value-num">05</div>
-        <div class="value-title">Siguranță și sustenabilitate</div>
-        <p class="value-text">Prioritizăm siguranța în muncă și promovăm soluții durabile, compatibile cu structura și materialele originale ale clădirii.</p>
-      </div>
- 
-      <div class="value-card">
-        <div class="value-num">06</div>
-        <div class="value-title">Eficiență operațională</div>
-        <p class="value-text">Organizarea riguroasă a activității, managementul proiectelor și respectarea termenelor de execuție sunt pilonii strategiei noastre.</p>
-      </div>
-    </div>
-  </div>
-</div>
+			<header id="header">
+				<h1><a href="index.html">Revivo Heritage</a> SRL</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="#" class="icon solid fa-angle-down">Pagini</a>
+							<ul>
+								<li><a href="generic.html">Despre noi</a></li>
+								<li><a href="proiecte.html">Proiecte</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
  
 			<!-- Main -->
-				<section id="main" class="container">
-					<header>
-						<h2>Cine suntem</h2>
-					</header>
-					<div class="box">
-						<span class="image featured"><img src="images/pic06.jpg" alt="" /></span>
-						<h3>Despre Revivo Heritage</h3>
-						<p>Revivo Heritage este o companie specializată în restaurarea și conservarea clădirilor istorice, dedicată protejării patrimoniului arhitectural și cultural al României. Cu o abordare riguroasă și un profund respect față de valoarea istorică a fiecărui obiectiv, combinăm expertiza tehnică avansată, materialele de calitate superioară și metodologiile consacrate în domeniu pentru a reda frumusețea autentică și durabilitatea construcțiilor de epocă. Misiunea noastră este să asigurăm că moștenirea arhitecturală a generațiilor trecute rămâne vie și accesibilă generațiilor viitoare.
-							<br><br>
-							Activitatea noastră acoperă o gamă completă de servicii de restaurare și conservare, adaptate specificului fiecărui obiectiv în parte. Intervenim asupra monumentelor istorice, clădirilor de patrimoniu și imobilelor cu valoare arhitecturală deosebită, oferind soluții integrate care răspund atât cerințelor actuale de siguranță și funcționalitate, cât și standardelor internaționale de conservare. Fiecare proiect este tratat ca un angajament față de autenticitate, iar intervențiile noastre sunt concepute astfel încât să păstreze nealterată identitatea originală a construcției.
-							<br><br>
-							Serviciile Revivo Heritage includ evaluarea și diagnosticarea stării de conservare a structurilor istorice, consolidarea și stabilizarea elementelor arhitecturale deteriorate, restaurarea fațadelor, a elementelor decorative și a finisajelor originale, precum și reabilitarea sistemelor structurale în conformitate cu normele tehnice în vigoare. Oferim, de asemenea, servicii de consultanță specializată pentru proprietarii de imobile istorice, sprijinindu-i în obținerea avizelor necesare și în elaborarea documentațiilor tehnice solicitate de autoritățile competente.
-						</p>
+			<section id="main" class="container">
  
+				<header>
+					<h2>Proiectele noastre</h2>
+					<p>De la consolidări structurale la restaurarea fațadelor istorice — fiecare proiect înseamnă o clădire redată comunității.</p>
+				</header>
+ 
+				<div class="box">
+ 
+					<!-- ── Intro ── -->
+					<div class="projects-intro">
+						<p>Revivo Heritage intervine asupra clădirilor publice și private cu valoare arhitecturală, istorică și culturală din București și din țară. Specialitatea noastră este reabilitarea clădirilor din <strong>centrul istoric al Bucureștiului</strong> — imobile care necesită expertize complexe, materiale compatibile cu originalul și respectarea strictă a legislației privind protecția patrimoniului.</p>
 					</div>
  
-				<!-- Stats -->
-				<div class="rh-stats rh-slide">
-					<div class="rh-stat">
-						<span class="rh-stat-value">7+</span>
-						<span class="rh-stat-label">Specialiști în echipă</span>
-					</div>
-					<div class="rh-stat">
-						<span class="rh-stat-value">50+</span>
-						<span class="rh-stat-label">Proiecte finalizate</span>
-					</div>
-					<div class="rh-stat">
-						<span class="rh-stat-value">100%</span>
-						<span class="rh-stat-label">Angajament calitate</span>
-					</div>
-					<div class="rh-stat">
-						<span class="rh-stat-value">24/7</span>
-						<span class="rh-stat-label">Suport disponibil</span>
-					</div>
-				</div>
+					<!-- ══════════════════════════════════
+					     PROIECT PRINCIPAL: Centrul Vechi
+					══════════════════════════════════ -->
+					<p class="section-title">Proiect de referință</p>
  
-				
+					<div class="featured-project fade-in">
+						<div class="fp-header">
+							<span class="badge">&#9733; Proiect Flagship</span>
+							<h3>Reabilitare Imobil Istoric — Centrul Vechi, București</h3>
+							<span class="fp-location">&#9679; Sector 3, București</span>
+						</div>
+ 
+						<!-- Before / After -->
+						<div class="before-after-wrap">
+							<div class="ba-panel before">
+								<span class="ba-label">&#9664; Înainte</span>
+								<img src="images/pic09.jpeg" alt="Înainte de renovare">
+							</div>
+							<div class="ba-panel after">
+								<span class="ba-label">&#9654; După</span>
+								<img src="images/pic10.jpg" alt="După renovare">
+							</div>
+						</div>
+ 
+						<div class="fp-body">
+							<p>Intervenție complexă de reabilitare a unui imobil cu valoare istorică și arhitecturală din zona centrală a Bucureștiului. Lucrările au inclus consolidarea structurală a planșeelor și a fundației, restaurarea fațadei cu refacerea elementelor decorative originale din stuc și tencuială, reabilitarea completă a instalațiilor electrice, sanitare și termice, precum și reamenajarea interiorului conform normelor actuale de utilizare.</p>
+							<p>Proiectul a fost realizat în colaborare cu arhitecți și ingineri structurali, cu obținerea tuturor avizelor necesare de la autoritățile de protecție a patrimoniului, respectând cu strictețe autenticitatea materialelor și tehnicilor originale de construcție.</p>
+							<div class="fp-tags">
+								<span>Consolidare structurală</span>
+								<span>Restaurare fațadă</span>
+								<span>Clădire istorică</span>
+								<span>Reabilitare instalații</span>
+								<span>Patrimoniu urban</span>
+								<span>Centrul Vechi</span>
+							</div>
+						</div>
+					</div>
+ 
+					<!-- ══════════════════════════════════
+					     AL DOILEA PROIECT BEFORE/AFTER
+					══════════════════════════════════ -->
+					<div class="featured-project fade-in">
+						<div class="fp-header">
+							<span class="badge">Proiect Public</span>
+							<h3>Restaurare Fațadă — Clădire Instituțională, București</h3>
+							<span class="fp-location">&#9679; Sector 1, București</span>
+						</div>
+ 
+						<div class="before-after-wrap">
+							<div class="ba-panel before">
+								<span class="ba-label">&#9664; Înainte</span>
+								<img src="images/pic11.jpeg" alt="Înainte de renovare">
+							</div>
+							<div class="ba-panel after">
+								<span class="ba-label">&#9654; După</span>
+								<img src="images/pic12.jpeg" alt="După renovare">
+							</div>
+						</div>
+ 
+						<div class="fp-body">
+							<p>Restaurarea completă a fațadei unui imobil cu funcțiune instituțională, incluzând refacerea ornamentelor din piatră și tencuială decorativă, curățarea și tratarea suprafețelor, impermeabilizarea și aplicarea de tencuieli compatibile cu substratul istoric. Lucrările au respectat cerințele autorității locale și ale Ministerului Culturii.</p>
+							<div class="fp-tags">
+								<span>Restaurare fațadă</span>
+								<span>Sector public</span>
+								<span>Ornamente istorice</span>
+								<span>Impermeabilizare</span>
+							</div>
+						</div>
+					</div>
+ 
+					<!-- ══════════════════════════════════
+					     TIPURI DE LUCRĂRI
+					══════════════════════════════════ -->
+					<p class="section-title">Ce oferim</p>
+ 
+					<div class="services-grid">
+						<div class="service-card fade-in">
+							<span class="sc-icon">&#127963;</span>
+							<h4>Renovare generală</h4>
+							<p>Renovare și reabilitare completă a clădirilor publice și private, de la structură până la finisaje.</p>
+						</div>
+						<div class="service-card fade-in">
+							<span class="sc-icon">&#127981;</span>
+							<h4>Restaurare patrimoniu</h4>
+							<p>Restaurarea clădirilor istorice și a monumentelor, cu respectarea tehnicilor și materialelor originale.</p>
+						</div>
+						<div class="service-card fade-in">
+							<span class="sc-icon">&#128736;</span>
+							<h4>Consolidare structurală</h4>
+							<p>Lucrări de punere în siguranță și consolidare pentru clădiri cu risc seismic sau degradări structurale.</p>
+						</div>
+						<div class="service-card fade-in">
+							<span class="sc-icon">&#127968;</span>
+							<h4>Restaurare fațade</h4>
+							<p>Refacerea și restaurarea fațadelor, elementelor decorative, tencuielilor și finisajelor exterioare.</p>
+						</div>
+						<div class="service-card fade-in">
+							<span class="sc-icon">&#9889;</span>
+							<h4>Modernizare instalații</h4>
+							<p>Modernizarea instalațiilor electrice, sanitare și termice conform standardelor actuale.</p>
+						</div>
+						<div class="service-card fade-in">
+							<span class="sc-icon">&#127807;</span>
+							<h4>Eficiență energetică</h4>
+							<p>Lucrări de termoizolație și eficiență energetică în conformitate cu reglementările în vigoare.</p>
+						</div>
+					</div>
+ 
+					<!-- ══════════════════════════════════
+					     CTA
+					══════════════════════════════════ -->
+					<div class="cta-box fade-in">
+						<div>
+							<h3>Ai un proiect de renovare sau restaurare?</h3>
+							<p>Contactează-ne pentru o evaluare inițială gratuită a imobilului tău.</p>
+						</div>
+						<a href="contact.html" class="button-cta">Solicită o ofertă</a>
+					</div>
+ 
+				</div><!-- /.box -->
+			</section>
  
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="mailto:revivo.heritage0@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; 2026 Revivo Heritage SRL. Toate drepturile rezervate.</li>
+				</ul>
+			</footer>
  
 		</div>
  
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
- 
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Scroll Fade-In -->
 		<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			var observer = new IntersectionObserver(function (entries) {
-				entries.forEach(function (entry) {
-					if (!entry.isIntersecting) return;
-					var el = entry.target;
- 
-					if (el.classList.contains('value-card')) {
-						var all = Array.from(document.querySelectorAll('.value-card'));
-						var i = all.indexOf(el);
-						setTimeout(function () {
-							el.classList.add('visible');
-							/* number counter */
-							var numEl = el.querySelector('.value-num');
-							if (numEl) {
-								var target = parseInt(numEl.textContent, 10);
-								if (!isNaN(target)) {
-									var dur = 600, t0 = null;
-									(function step(ts) {
-										if (!t0) t0 = ts;
-										var p = Math.min((ts - t0) / dur, 1);
-										var e = 1 - Math.pow(1 - p, 3);
-										var c = Math.floor(e * target);
-										numEl.textContent = c < 10 ? '0' + c : '' + c;
-										if (p < 1) requestAnimationFrame(step);
-										else numEl.textContent = target < 10 ? '0' + target : '' + target;
-									})(performance.now());
-								}
-							}
-						}, i * 110);
- 
-					} else if (el.classList.contains('rh-service-card')) {
-						var all = Array.from(document.querySelectorAll('.rh-service-card'));
-						var i = all.indexOf(el);
-						setTimeout(function () { el.classList.add('visible'); }, i * 110);
- 
-					} else {
-						el.classList.add('visible');
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						setTimeout(() => {
+							entry.target.classList.add('visible');
+						}, (entry.target.dataset.delay || 0) * 80);
+						observer.unobserve(entry.target);
 					}
- 
-					observer.unobserve(el);
 				});
 			}, { threshold: 0.12 });
- 
-			document.querySelectorAll('.value-card, .rh-service-card, .rh-slide').forEach(function (el) {
-				observer.observe(el);
+
+			document.querySelectorAll('.service-card').forEach((el, i) => {
+				el.dataset.delay = i % 3;
 			});
-		});
+
+			document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 		</script>
- 
 	</body>
 </html>
